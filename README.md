@@ -15,8 +15,8 @@ docker run --hostname YuGiOh-rabbit  --name yugioh-bus -p 5672:5672 -p 15672:156
 2. start pubing the cards
 
 ```powershell
-cd cardDispenser;
-python -m venv venv;
+cd cardDispenser
+python -m venv venv
 .\venv\Scripts\activate # source venv/bin/activate
 pip install -r reqs.txt
 
