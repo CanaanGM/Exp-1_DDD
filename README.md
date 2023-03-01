@@ -46,3 +46,4 @@ Starring:
 1. [RabbitMq python docs](https://www.rabbitmq.com/tutorials/tutorial-three-python.html)
 1. [python events package](https://pypi.org/project/Events/)
 1. [this](https://stackoverflow.com/questions/47290108/how-to-open-rabbitmq-in-browser-using-docker-container) to read queue size
+1. [microsoft json deocs](https://learn.microsoft.com/en-us/dotnet/standard/serialization/system-text-json/how-to?pivots=dotnet-8-0)
