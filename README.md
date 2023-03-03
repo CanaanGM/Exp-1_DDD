@@ -1,3 +1,6 @@
+# Experiment the first
+
+contrary to popular believe DDD is not DomainDrivenDesign. . . at least not in this case, it is this: [D/D/D](https://yugioh.fandom.com/wiki/D/D/D)
 
 ### the way this goes is
 
