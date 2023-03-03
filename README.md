@@ -76,7 +76,16 @@ uvicorn main:app --reload -p 4444 # or whatever u want
 
 3. C# 7 as the cards proccessor, it takes the card from pyPi and removes some props and throws it again at the space rabbit this time onto a different queue `queueName=YuGiOh-Processed-Queue`
 
-4. rust as the database guy
+4. rust as the database manager
+5. postgress as the DB
+6. Docker as the rich guy that provided the places to act
+
+I would love to thank:
+
+- Panadol for making me see ghosts
+- lemon and honey
+- windows for not crashing randomly
+- git for saving me from windows
 
 > the `loop` is pointless as this should just run once and only once, if this was supposed to listen infinitly it should invoke events or something anyways i'm having fun
 > used raw sql cause it's healthier than an ORM (you don't know what they put in there)
