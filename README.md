@@ -24,7 +24,7 @@ http GET https://db.ygoprodeck.com/api/v7/cardinfo.php > AllCards.json
 >
 > card info gotten from [Ygoprodeck.com](https://db.ygoprodeck.com/api/v7/cardinfo.php), i got all the cards as to not annoy their API
 
-![](./static/Exp-1.showcase.mkv)
+![](./static/Exp-1.showcase.gif)
 ![](./static/Queue_status_read-write.png)
 ![](./static/pyApi.png)
 ![](./static/c%23Worker.png)
