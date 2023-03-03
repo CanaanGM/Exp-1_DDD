@@ -41,33 +41,31 @@ fn main() -> Result<(), Error> {
     let limit = 12244;
     let mut counter = 0;
     println!("starting insertion -> ");
-    loop {
-        for (_, message) in consumer.receiver().iter().enumerate() {
-            match message {
-                ConsumerMessage::Delivery(delivery) => {
-                    if counter == limit {
-                        println!("\nfinished inserting.");
-                        break;
-                    };
-                    let payload = std::str::from_utf8(&delivery.body).unwrap();
-                    let my_message: YuGiOhCard = serde_json::from_str(payload).unwrap();
-
-                    if counter % 10 == 0 {
-                        print!("");
-                    }
-                    insert_card_into_db(&mut client, &my_message)?;
-                }
-                other => {
-                    println!("Consumer ended: {:?}", other);
+    for (_, message) in consumer.receiver().iter().enumerate() {
+        match message {
+            ConsumerMessage::Delivery(delivery) => {
+                if counter == limit {
+                    println!("\nfinished inserting.");
                     break;
-                }
-            }
-            counter += 1;
-        }
+                };
+                let payload = std::str::from_utf8(&delivery.body).unwrap();
+                let my_message: YuGiOhCard = serde_json::from_str(payload).unwrap();
 
-        let cards_in_database = get_entries_count(&mut client)?;
-        println!("Finished creating {} cards.", cards_in_database);
+                if counter % 10 == 0 {
+                    print!("");
+                }
+                insert_card_into_db(&mut client, &my_message)?;
+            }
+            other => {
+                println!("Consumer ended: {:?}", other);
+                break;
+            }
+        }
+        counter += 1;
     }
+
+    let cards_in_database = get_entries_count(&mut client)?;
+    println!("Finished creating {} cards.", cards_in_database);
 
     Ok(())
 }
