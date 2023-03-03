@@ -1,0 +1,13 @@
+[package]
+name = "card_saver"
+version = "0.1.0"
+edition = "2021"
+author = "Canaan, which is me!"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+serde = { version = "1.0.152", features = ["derive"] }
+postgres = "0.19.4"
+serde_json = "1.0.93"
+amiquip = "0.4.2"
