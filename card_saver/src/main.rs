@@ -7,7 +7,8 @@ use data::*;
 use postgres::{Client, Error, NoTls};
 
 fn main() -> Result<(), Error> {
-    println!("Hello, world!");
+    println!("どもはじみまして！忍者くろすべし !");
+    println!("今なんか言った？？");
 
     let mut client = Client::connect(
         "postgresql://admin:admin1234@localhost:5432/postgres",
@@ -52,7 +53,7 @@ fn main() -> Result<(), Error> {
                     let my_message: YuGiOhCard = serde_json::from_str(payload).unwrap();
 
                     if counter % 10 == 0 {
-                        print!("# ");
+                        print!("");
                     }
                     insert_card_into_db(&mut client, &my_message)?;
                 }
