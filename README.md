@@ -1,6 +1,4 @@
 
-# IN PROGRESS
-
 ### the way this goes is
 
 - CardDispenser -> sends card info to `YuGiOh-Card-Queue` rabbitMQ bus thru the default exchange,
