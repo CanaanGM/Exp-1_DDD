@@ -22,6 +22,7 @@ namespace YuGiOh_CMD_server
         {
             while (true)
             {
+                Console.WriteLine("++ Ready to accept Commands\n++Start++ to start processing cards\n++Stop++ to stop.\n++");
                 switch (Console.ReadLine())
                 {
                     case "Start":
@@ -44,20 +45,20 @@ namespace YuGiOh_CMD_server
 
             channel.QueueDeclare(queue: "YuGiOh-Processed-Queue", false, false, false, null);
             string message = JsonSerializer.Serialize(recievedCard);
-             var body = Encoding.UTF8.GetBytes(message);
+            var body = Encoding.UTF8.GetBytes(message);
 
-          channel.BasicPublish(
-              exchange: string.Empty, 
-              routingKey: "YuGiOh-Processed-Queue", 
-              basicProperties: null, 
-              body
-              );
+            channel.BasicPublish(
+                exchange: string.Empty,
+                routingKey: "YuGiOh-Processed-Queue",
+                basicProperties: null,
+                body
+                );
         }
 
         private static void ConsumeMessage(IModel channel)
         {
             channel.QueueDeclare(
-                    queue: "YuGiOh-Card-Queue",false,false,false,null
+                    queue: "YuGiOh-Card-Queue", false, false, false, null
                 );
             var consumer = new EventingBasicConsumer(channel);
             consumer.Received += Consumer_Received;
@@ -87,7 +88,7 @@ namespace YuGiOh_CMD_server
                 try
                 {
                     ConsumeMessage(channel);
-                    
+
                     if (!Processing) break;
                 }
                 catch (Exception ex)

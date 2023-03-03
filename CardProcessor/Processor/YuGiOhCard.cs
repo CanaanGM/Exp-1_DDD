@@ -10,23 +10,23 @@ namespace Processor
     public class YuGiOhCard
     {
         public int id { get; set; }
-        public string name { get; set; }
-        public string type { get; set; }
-        public string frameType { get; set; }
-        public string desc { get; set; }
-        public string race { get; set; }
-        public string archetype { get; set; }
+        public string? name { get; set; }
+        public string? type { get; set; }
+        public string? frameType { get; set; }
+        public string? desc { get; set; }
+        public string? race { get; set; }
+        public string? archetype { get; set; }
         //public List<CardSet> card_sets { get; set; }
-        public List<CardImage> card_images { get; set; }
+        public List<CardImage>? card_images { get; set; }
         //public List<CardPrice> card_prices { get; set; }
     }
 
     public class CardImage
     {
         public int id { get; set; }
-        public string image_url { get; set; }
-        public string image_url_small { get; set; }
-        public string image_url_cropped { get; set; }
+        public string? image_url { get; set; }
+        public string? image_url_small { get; set; }
+        public string? image_url_cropped { get; set; }
     }
 
     //public class CardPrice
